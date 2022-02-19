@@ -1,4 +1,4 @@
-package magnalleexample.testReceipes
+package magnalleexample.testRecipes
 
 import org.junit.Test
 
