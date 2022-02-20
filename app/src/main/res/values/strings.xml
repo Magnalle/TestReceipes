@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="difficulty">Difficulty: </string>
+    <string name="time">Time required: </string>
+    <string name="calories">Calories value: </string>
+    <string name="refresh">Refresh</string>
 </resources>

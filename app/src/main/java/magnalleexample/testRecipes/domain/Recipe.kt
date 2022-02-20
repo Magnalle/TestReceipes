@@ -1,16 +1,16 @@
 package magnalleexample.testRecipes.domain
 
 data class Recipe(
-    val calories : String,
-    val carbos : String,
+    val id : String,
+    val name : String,
     val description : String,
     val difficulty : Int,
-    val fats : String,
+    val time : String,
     val headline : String,
-    val id : String,
-    val image : String,
-    val name : String,
+    val calories : String,
     val proteins : String,
-    val thumb : String,
-    val time : String
+    val fats : String,
+    val carbos : String,
+    val image : String,
+    val thumb : String
 )
