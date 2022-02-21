@@ -8,14 +8,26 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollHorizontally="false">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
 
         <ImageView
             android:id="@+id/recipe_item_image"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            app:layout_constraintHeight_min="200dp"
+            app:layout_constraintWidth_min="200dp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:src="@drawable/ic_launcher_background" />
@@ -28,7 +40,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Recipe name" />
 
@@ -36,14 +48,14 @@
             android:id="@+id/recipe_item_headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/recipe_item_name"
             tools:text="Headline" />
         <TextView
             android:id="@+id/recipe_item_difficulty_caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/recipe_item_headline"
             android:text="@string/difficulty" />
         <TextView
@@ -57,7 +69,7 @@
             android:id="@+id/recipe_item_time_caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/recipe_item_difficulty_caption"
             android:text="@string/time" />
         <TextView
@@ -71,7 +83,7 @@
             android:id="@+id/recipe_item_calories_caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@id/recipe_item_time"
             android:text="@string/calories" />
         <TextView
@@ -85,9 +97,15 @@
 
         <TextView
             android:id="@+id/recipe_item_description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recipe_item_image"
-            app:layout_constraintTop_toBottomOf="@id/recipe_item_calories_caption" />
+            android:breakStrategy="simple"
+            android:scrollHorizontally="false"
+            app:layout_constraintHeight_min="200dp"
+            app:layout_constraintWidth_min="200dp"
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recipe_item_calories_caption"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

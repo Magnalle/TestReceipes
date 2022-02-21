@@ -61,7 +61,7 @@ class RecipesListAdapter : ListAdapter<Recipe, RecyclerView.ViewHolder>(DiffCall
             Glide
                 .with(binding.root)
                 .load(recipe.image)
-                .fitCenter()
+                //.fitCenter()
                 .placeholder(CircularProgressDrawable(binding.root.context).let {
                     it.start()
                     it})
